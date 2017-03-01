@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>two bars</title>
+    <style type="text/css" media="screen">
+    #header,
+    #footer {
+        height: 100px;
+        background: red;
+        overflow: hidden;
+    }
+    .main{
+    	height: 200px;
+    	width: 100%;
+         
+         position: relative;
+         }
+     .left{
+     	background-color: blue;
+     	position:absolute;
+        width:100px;
+        height: 100%;
+        left: 0;
+        top:0;
+
+     }
+     .center{
+        background-color: yellow;
+       margin:0 100px;
+       height: 100%;
+
+     }
+     .right{
+     	background-color: green;
+     	position:absolute;
+        width:100px;
+        height: 100%;
+        right: 0;
+        top:0;
+     }
+    </style>
+</head>
+
+<body>
+    <header id="header" class="">
+        header
+    </header>
+    <!-- /header -->
+    <div class="main">
+        <div class="left">left</div>
+        <div class="center">
+            center
+        </div>
+        <div class="right">right</div>
+    </div>
+    </main>
+    <footer id="footer">
+        footer
+    </footer>
+</body>
