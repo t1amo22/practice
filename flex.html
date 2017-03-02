@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>flex box</title>
+    <style type="text/css">
+    .container {
+        display: -webkit-flex;/* chrome21+*/
+       
+        display: flex; /* 新版本语法： Opera 12.1, Firefox 22+ */
+       
+
+        width: 600px;
+        height: 600px;
+        border:1px solid red;
+        
+        /*项目的排列方向*/
+        
+        -webkit-box-pack: center;
+         -webkit-box-align: : center;
+         -webkit-justify-content:center;
+         align-items:center;
+
+
+
+    }
+    .box1{
+    	background-color: red;
+
+    }
+    .box2{
+    	background-color: green;
+    }
+    .box3{
+    	background-color: black;
+    }
+    .box1,.box2,.box3{
+    	width: 100px;
+    	height: 50%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+       <div class="box1">1</div>
+       <div class="box2">2</div>
+       <div class="box3">3</div>
+    </div>
+</body>
+
+</html>
