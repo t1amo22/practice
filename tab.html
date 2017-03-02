@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .selected {
+        background-color: yellow;
+    }
+    
+    .show {
+        display: block !important;
+        border: 1px solid blue;
+        width: 400px;
+        height: 400px;
+    }
+    
+    h2 {
+        width: 100px;
+        display: inline-block;
+    }
+    
+    #tab-content div {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="tab-head">
+        <h2 class="selected">1</h2>
+        <h2>2</h2>
+        <h2>3</h2>
+    </div>
+    <div id="tab-content">
+        <div class="show">content1</div>
+        <div>content2</div>
+        <div>content3</div>
+    </div>
+    <script >
+         var tabs=document.getElementById("tab-head").getElementsByTagName('h2');
+         var contents=document.getElementById("tab-content").getElementsByTagName('div');;
+         console.log(contents);
+
+         (function changetab(){
+         	for(var i = 0, len = tabs.length; i < len; i++) {
+                    tabs[i].onclick = showTab;
+                }
+         })();
+
+         function showTab() {
+                for(var i = 0, len = tabs.length; i < len; i++) {
+                    if(tabs[i] === this) {
+                        tabs[i].className = 'selected';
+                        contents[i].className = 'show';
+                    } else {
+                        tabs[i].className = '';
+                        contents[i].className = '';
+                    }
+                }
+            }
+    </script>
+</body>
+
+</html>
