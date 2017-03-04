@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>event.target</title>
+    <script>
+    window.onload = function() {
+        var oUl = document.getElementById("ul");
+        var aLi = document.getElementsByTagName("li");
+        // li太多影响性能
+        /*
+                for (var i = 0; i<aLi.length ; i++) {
+                	aLi[i].onmouseover=function(){
+                		 this.style.background = "red";
+                	}
+                	aLi[i].onmouseout=function(){
+                		 this.style.background = "";
+                	}
+                };*/
+
+        // 事件委托
+        oUl.onmouseover = function(e) {
+            // console.log(e.target.nodeName.toLowerCase());
+            // for IE
+            var e = e || window.event;
+            var target = e.target || e.srcElement;
+            if (target.nodeName.toLowerCase() == "li") {
+                e.target.style.background = "red";
+            };
+        }
+
+        oUl.onmouseout = function(e) {
+            var e = e || window.event;
+            var target = e.target || e.srcElement;
+
+            if (target.nodeName.toLowerCase() == "li") {
+                target.style.background = "";
+            };
+        }
+
+    }
+    </script>
+</head>
+
+<body>
+    <ul id="ul">
+        <li>aaaaaaaa</li>
+        <li>bbbbbbbb</li>
+        <li>cccccccc</li>
+    </ul>
+</body>
+
+</html>
