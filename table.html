@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+</head>
+
+<body>
+    <!-- table的部分 -->
+    <!-- width：指定表格的宽度 border：0就是没有边框-->
+    <!-- border="1"就是表格的宽度 -->
+    <!-- cellpadding="10" 指定表格的格子内填充 -->
+    <!-- cellspacing="2"  表格的外边距-->
+    <!-- bgcolor="red"    背景颜色-->
+
+    css:
+    <!-- table-layout:显示单元格，行，列的算法规则 -->
+    <!-- fixed:列宽由表格的列宽决定 -->
+    <!-- automatic:列宽由表表格内容最长的单元格的宽度决定，和定义的列宽无关 ，不起作用 -->
+    <table width="100%" border="1" bgcolor="yellow" style="table-layout: automatic">
+        <col align="left"  />
+        <col align="left" />
+        <col align="right" />
+        <tr>
+            <th >ISBN</th>
+            <!--  th自动居中和加粗呢！ -->
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>347689655555555555555555555555555555555555555555555555</td>
+            <td>My first HTML</td>
+            <td>$53</td>
+        </tr>
+        <tr>
+            <td>2489604</td>
+            <td>My first CSS</td>
+            <td>$47</td>
+        </tr>
+</body>
+
+</html>
