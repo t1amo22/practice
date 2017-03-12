@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>three-columns-float</title>
+	<style>
+		.left{
+			width: 200px;
+			float: left;
+			background: yellow;
+			height: 800px;
+		}
+		.right{
+			width: 300px;
+			float: right;
+			height: 800px;
+			background: pink;
+		}
+		 .main{ 
+		
+		 	/* 或者 margin-left: 200px;
+		 	margin-right: 300px;  */
+		 			 	position: absolute;
+		 			 	left: 200px;
+		 			 	right: 300px;
+		 			 	
+			background-color: green;
+			 height: 800px; 
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="main">main:左右两侧定宽，中间自适应： ddddddddddddddddddd左右都绝对定位，定宽，中间设置高度。设置marginleft和right为左右两栏的宽度</div>
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+</body>
+</html>
