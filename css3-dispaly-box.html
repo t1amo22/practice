@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3-dispaly:box</title>
+	<style>
+		.wrap{
+			display: box;
+			display:-webkit-box;
+			display: -moz-box;
+			display: -o-box;
+			height: 100px;
+			width: 100%;
+			background-color: purple;
+			margin:10px;
+
+		}
+		.box1{
+			
+			background-color: grey;
+			width: 200px;
+			margin: 10px ;
+			
+		}
+		.box2{
+			
+			-webkit-box-flex: 1;
+			background-color: grey;
+			margin: 10px 10px 10px 0;
+			
+		}
+		.box3{
+			
+			-webkit-box-flex: 1;
+			background-color: grey;
+			margin: 10px 10px 10px 0;
+			
+		}
+	</style>
+</head>
+<body>
+<p>目前box-flex属性还没有得到firefox、Opera、chrome浏览器的完全支持，但可以使用它们的私有属性定义firefox(-moz-)、opera(-o-)、chrome/safari（-webkit-)。</p>
+   <p>如果其中一个子容器或多个子容器设置了固定宽度，其它子容器没有设置，其计算方式是这样的：子容器如果设置了固定宽度值，该子容器则直接应用设置的宽度值，其它没有设置的则再父容器的宽度基础上减去子容器设置的固定宽度，在剩下的宽度基础上按一定比例进行划分分配。</p>
+   <p>必须给父容器wrap定义css属性display:box其子容器才可以进行划分,box-flex的值是按多少等分</p>
+	<div class="wrap">
+		<div class="box1">定宽width:100px;</div>
+		<div class="box2">-webkit-box-flex: 1;</div>
+		<div class="box3">-webkit-box-flex: 1;</div>
+	</div>
+
+	<div class="wrap">
+		<div class="box1">定宽width:100px;</div>
+		<div class="box2">-webkit-box-flex: 1;</div>
+		<div class="box3">-webkit-box-flex: 1;</div>
+	</div>
+</body>
+</html>
