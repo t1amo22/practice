@@ -15,15 +15,12 @@
         align-items: center;
         justify-content: center;
     }
-    
-    .wrap1 {}
     </style>
 </head>
 
 <body>
-    方法一： CSS3的flexbox： 父元素： .wrap { display: flex; align-items: center; justify-content: center; } 
-    <br>
-    方法二： 给子元素加上table标签，让table的margin:0 auto;height:100%;
+    方法一： CSS3的flexbox： 父元素： .wrap { display: flex; align-items: center; justify-content: center; }
+    <br> 方法二： 给子元素加上table标签，让table的margin:0 auto;height:100%;
     <div class="wrap" style="border:1px solid blue;">
         <ul class="box">
             <li>8888888888</li>
@@ -49,6 +46,16 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    display:table;
+    <div style="border:1px solid blue;height: 200px;">
+        <ul style="border:1px solid red ;">
+            <li>8888888888</li>
+            <li>8888888888</li>
+            <li>8888888888</li>
+            <li>8888888888</li>
+            <li>8888888888</li>
+        </ul>
     </div>
 </body>
 

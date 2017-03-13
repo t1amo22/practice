@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>white-space</title>
+</head>
+<body>
+    <h4>normal 默认，连续的空白符会被合并，换行符会被当作空白符来处理，填充line盒子时，必要的话会换行。</h4>
+	<p style="border:1px solid red;width: 140px;white-space: normal">
+	  很长文字，        很长文字，     很长文字，
+	  很长文字， 很长文字
+		
+	</p>
+	<h4>nowrap 翻译过来意思是"不包裹"，连续的空白符和换行符会被合并，文本超出给定长度不会换行。</h4>
+	<p style="border:1px solid red;width: 140px;white-space: nowrap">
+	  很长文字，        很长文字，     很长文字，
+	  很长文字， 很长文字
+		
+	</p>
+	<h4>pre 连续的空白符会被保留，在遇到换行符或者换行元素时才会换行。相当于HTML中的<pre>标签，可预定义格式化的文本。</h4>
+	<p style="border:1px solid red;width: 140px;white-space: pre">
+	  很长文字，        很长文字，     很长文字，
+	  很长文字， 很长文字
+		
+	</p>
+	<h4>pre-wrap意为格式化包裹，既能格式化又能让盒子包裹，所以是连续的空白符会被保留，在遇到换行符或者<br>元素或者需要为了填充line盒子时才会换行。</h4>
+	<p style="border:1px solid red;width: 140px;white-space: pre-wrap">
+	  很长文字，        很长文字，     很长文字，
+	  很长文字， 很长文字
+		
+	</p>
+	<h4>pre-line 连续的空格符会被合并，在遇到换行符或者<br>元素或者需要为了填充line盒子时才会换行。这个更人性化了，注重格式化但更注重换行。</h4>
+	<p style="border:1px solid red;width: 140px;white-space: pre-line">
+	  很长文字，        很长文字，     很长文字，
+	  很长文字， 很长文字
+		
+	</p>
+</body>
+</html>
