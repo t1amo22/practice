@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lazyload</title>
+	<style>
+		.lazy{
+			border:0;
+		}
+	</style>
+</head>
+<body>
+	<img src="images/img1.jpg" alt="images/img1.jpg"><br>
+	<img src="images/img1.jpg" alt=""><br>
+	<img class="lazy" lazy_src="images/img2.jpg" alt=""><br>
+	<img class="lazy" lazy_src="images/img3.jpg" alt="">
+	<script>
+
+	
+	function lazyload(){
+	          /*console.log( "滚轮划上去的高度"+document.body.scrollTop);
+	          console.log( "页面可视区域大小"+document.body.clientHeight);
+	          console.log( "图片纵坐标"+imgs[1].offsetTop);
+	          console.log( ((imgs[2].offsetTop-document.body.scrollTop)<=document.body.clientHeight));*/
+	          
+
+	          /*页面可视区域大小*/
+	          var pageHeight=  document.body.clientHeight   /*混杂模式*/
+	                         ||document.documentElement.clientHeight /*标准模式*/
+	                         ||window.innerHeight;  /*移动设备*/
+	          // 滚轮划上去的高度
+	          var scrollHeight= window.pageYOffset 
+	                           || document.documentElement.scrollTop 
+	                           || document.body.scrollTop;
+	         
+	          // 将所有延迟加载的图片放到一个数组里头
+	          var imgs=document.getElementsByTagName("img");
+	          var lazyArr=[];
+	          for (var i = 0; i < imgs.length; i++) {
+	          	if (imgs[i].className=="lazy") {
+	          		lazyArr.push(imgs[i]);
+	          	};
+	          };
+	          // 判断图片是否到达可视区域：临界值：scrollHeight<imgs.offsetTop-pageHeight看不到;
+	          for (var j = 0; j < lazyArr.length; j++) {
+	          	 console.log(lazyArr[1].offsetTop)
+	          	 console.log(pageHeight)
+	          	 console.log(scrollHeight)
+	          	 var imgTop=lazyArr[1].offsetTop;
+	          
+	          	
+	          	if (scrollHeight>imgTop-pageHeight) {
+	          		lazyArr[j].src=lazyArr[j].getAttribute("lazy_src");
+	          	};
+	          };
+
+
+
+	          
+		}
+	/*setInterval(lazyload,1000)*/
+	window.onscroll=lazyload;
+	</script>
+
+</body>
+</html>
