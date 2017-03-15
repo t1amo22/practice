@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动的方法</title>
+    <style type="text/css" media="screen">
+    .wrap {
+        background-color: #ccc;
+        /* overflow: hidden; */
+    }
+    
+    .clearfix:after {
+        content: '.';
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    
+    .clear {
+        clear: left;
+    }
+    
+    .float {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: #eee;
+    }
+    
+    .nofloat {
+        height: 100px;
+        background-color: green;
+        width: 100%;
+        float: left;
+    }
+    
+    .parentsiblings {
+        height: 100px;
+        background-color: yellow;
+        width: 100%;
+    }
+
+    
+    </style>
+</head>
+
+<body>
+    <h2>浮动产生的问题</h2>
+    <ul>
+        <li>因为浮动元素脱离文档流，同级没浮动的元素会表现的它不存在一样</li>
+        <li>如果父元素没有设置宽高，如果子元素全部浮动，会导致父元素的高度无法撑开，影响与父元素同级的元素</li>
+    </ul>
+    <h2>解决办法</h2>
+    <ul>
+        <li>同级元素被覆盖：同时浮动同级元素（不推荐，后面的布局会受到影响）</li>
+        <li>在浮动元素后面加空标签清除浮动（不推荐，无意义的标签）</li>
+        <li>给非浮动元素加clear:both（left/right）</li>
+        <li>如果子元素全部浮动，那么父元素无法撑开：给父元素加after伪元素
+            <pre>
+    		.clearfix:after{
+			content: '.';
+			visibility: hidden;
+			display: block;
+			height: 0;
+			clear: both;
+		}
+    	</pre></li>
+    	<li>父元素overflow：hidden/auto;zoom:1(for IE)</li>
+    </ul>
+    <div class="wrap  clearfix">
+        <div class="float "></div>
+        <div class="nofloat "></div>
+    </div>
+    <div class="parentsiblings"></div>
+</body>
+
+</html>
