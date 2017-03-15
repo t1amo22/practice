@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>triangle</title>
+	<style type="text/css" media="screen">
+		.angleUp{
+			width: 0;
+			height: 0;
+			border:50px solid transparent;
+			border-bottom: 50px solid red;
+		}
+		.angleleft{
+			width: 0;
+			height: 0;
+			border:50px solid transparent;
+			border-right: 50px solid grey;
+		}
+		.angleright{
+			width: 0;
+			height: 0;
+			border:50px solid transparent;
+			border-left: 50px solid green;
+		}
+		.angledown{
+			width: 0;
+			height: 0;
+			border:50px solid transparent;
+			border-top: 50px solid yellow;
+		}
+		
+	</style>
+</head>
+<body>
+    <h2>用CSS画三角形的思想就是，让盒子的长度和宽度为0 ，border设置成很大，再使border透明，再设置各个方向的border就可以得到想要的三角形咯</h2>
+	<div class="angleUp"></div>
+	<div class="angleleft"></div>
+	<div class="angleright"></div>
+	<div class="angledown"></div>
+</body>
+</html>
