@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浏览器内核和私有前缀</title>
+	<style>
+		table{
+
+			border:1px solid blue;/* 只设置了外边框 */
+			width: 100%;
+			text-align: center;   /* 字体对其方式 */
+			/* border-collapse: collapse;   *//* 内边框是否一条线 默认separate*/
+			table-layout: fixed ;  /* 固定表格布局 可以更快的算出布局*/
+
+		}
+		th,tr,td{
+			border:1px solid blue;  /* 设置内边框 */
+			padding: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<table>
+		<caption>浏览器内核和私有前缀</caption>
+		<thead>
+			<tr>
+				<th>Chrome/Safari</th><th>Firfox</th><th>Opera</th><th>IE</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>webkit</td><td>Gecko</td><td>Presto</td><td>Tredent</td>
+			</tr>
+			<tr>
+				<td>-webkit-</td><td>-moz-</td><td>-o-</td><td>-ms-</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
