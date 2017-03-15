@@ -20,9 +20,9 @@
 
 <body>
     方法一： CSS3的flexbox： 父元素： .wrap { display: flex; align-items: center; justify-content: center; }
-    <br> 方法二： 给子元素加上table标签，让table的margin:0 auto;height:100%;
-    <div class="wrap" style="border:1px solid blue;">
-        <ul class="box">
+    <br> 
+    <div class="wrap" style="background:#ccc;height: 300px;">
+        <ul class="box" style="background:red;">
             <li>8888888888</li>
             <li>8888888888</li>
             <li>8888888888</li>
@@ -30,12 +30,15 @@
             <li>8888888888</li>
         </ul>
     </div>
-    <div class="wrap1" style="border:1px solid blue">
-        <table style="margin: 0 auto;height: 100%">
+    <br>
+    <br>
+    <p>方法二： 给子元素加上table标签，让table的margin:0 auto;height:100%;</p>
+    <div class="wrap1" style="background:#ccc;height: 300px;">
+        <table style="margin: 0 auto;height: 100%;">
             <tbody>
                 <tr>
                     <td>
-                        <ul style="border:1px solid red">
+                        <ul style="background:red">
                             <li>8888888888</li>
                             <li>8888888888</li>
                             <li>8888888888</li>
@@ -47,15 +50,44 @@
             </tbody>
         </table>
     </div>
-    display:table;
-    <div style="border:1px solid blue;height: 200px;">
-        <ul style="border:1px solid red ;">
-            <li>8888888888</li>
-            <li>8888888888</li>
-            <li>8888888888</li>
-            <li>8888888888</li>
-            <li>8888888888</li>
-        </ul>
+    <br>
+    <br>
+    <p>三：可以给子元素加上table标签，然后设置为display：inline;table继承父元素的宽和高，设置为100%；text-align：center</p>
+    <div style="background:#ccc;height: 300px;">
+        <table style="width: 100%;height: 100%;text-align: center;">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="test" style="background:red; display: inline;">
+                            水平垂直居中了吧
+                            <br> 两行文字哦
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <p>四：让父元素的display为table-cell,vertial-align设置成middle</p>
+    <div style="background:#ccc;width: 100%;height: 300px;display: table-cell;vertical-align: middle;">
+        <div class="test" style="background:red; ">
+            水平垂直居中了吧
+            <br> 两行文字哦
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <p>五：父元素相对定位，子元素绝对定位，左右为50%，再使用transform：translate上下移动自身的-50%;</p>
+    <p>这是CSS3里的方法，低版本IE和移动端不兼容，
+    因为定位的百分比是按照父元素的大小来计算的，但是transform是按照自身大小来计算的</p>
+    
+     <div style="background:#ccc;width: 100%;height: 300px;position: relative">
+        <div class="test" style="background:red;position: absolute;left: 50%;top: 50%; -webkit-transform: translate(-50%,-50%);">
+            水平垂直居中了吧
+            <br> 两行文字哦
+        </div>
     </div>
 </body>
 
