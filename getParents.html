@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <span>
+			<i id="myid">hello</i>
+		</span>
+    </div>
+    <script>
+    window.onload = function() {
+        function getParents(id) {
+            var e = document.getElementById(id);
+            var parent = e.parentNode;
+            var arr = [];
+            while (parent.tagName) {
+                arr.push(parent.tagName);
+                parent = parent.parentNode;
+            }
+           
+            console.log(arr)
+        };
+
+        getParents("myid");
+    }
+    </script>
+</body>
+
+</html>
