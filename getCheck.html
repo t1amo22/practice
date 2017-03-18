@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>页面所有的checkbox</title>
+</head>
+
+<body>
+    <input type="checkbox" name="" value="">checkbox
+    <input type="text" name="" value="">text
+    <input type="checkbox" name="" value="">checkbox
+    <input type="radio" name="" value="">radio
+    <input type="password" name="" value="">password
+    <script>
+    // 希望获取到页面中所有的checkbox怎么做？(不使用第三方框架)
+    (function getCheckbox() {
+        var oInput = document.getElementsByTagName("input");
+        var len = oInput.length;
+        var aList = [];
+        while (len--) {        //while的效率比较高
+            if (oInput[len].type == "checkbox") {
+                aList.push(oInput[len]);
+            };
+        }
+        console.log(aList) ;
+    })();
+    </script>
+</body>
+
+</html>
