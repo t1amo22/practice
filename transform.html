@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transform</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: #E7B52E;
+			
+		}
+		.box1{
+			-webkit-transform: rotate(45deg) ;
+		}
+		.box2{
+			-webkit-transform: translate(50px,50px)
+		}
+		.box3{
+			-webkit-transform: scale(2,1)
+		}
+		.box4{
+			-webkit-transform: matrix()
+		}
+	</style>
+</head>
+<body>
+	<h2>了解transfrom用法</h2>
+	<p>通过 rotate() 方法，元素顺时针旋转给定的角度。允许负值，元素将逆时针旋转。</p>
+	<p>让盒子旋转-webkit-transform: rotate(45deg) </p>
+	<div class="box box1"></div>
+	<p>通过 translate() 方法，元素从其当前位置移动，根据给定的 left（x 坐标） 和 top（y 坐标） 位置参数：</p>
+	<p>-webkit-transform: translate(50px,50px)<b>会遮盖普通流的元素</b></p>
+	<div class="box box2"></div>
+	<p>通过 scale() 方法，元素的尺寸会增加或减少，根据给定的宽度（X 轴）和高度（Y 轴）参数：</p>
+	<p>值 scale(2,1) 把宽度转换为原始尺寸的 2 倍，把高度转换为原始高度的 1 倍。</p>
+	<div class="box box3"></div>
+	<p>matrix() 方法把所有 2D 转换方法组合在一起。</p>
+	<div class="box4 box"></div>
+</body>
+</html>
