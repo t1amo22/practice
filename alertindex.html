@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>闭包：循环绑定事件，打印其index</title>
+</head>
+
+<body>
+    <ul id="myul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+    (function() {
+       var ali = document.getElementsByTagName("li");
+       
+        var len = ali.length;
+         for (var i = 0; i < len; i++) {
+            ali[i].onclick = (function(i) {
+                return function() {
+                    alert(i + 1);
+                }
+            })(i);
+        };
+    })();
+    </script>
+</body>
+
+</html>
