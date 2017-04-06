@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <style type="text/css" media="screen">
+
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>生日</th>
+                <th id="age">年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>lfr</td>
+                <td>4.14</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>lr</td>
+                <td>8.6</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>dyc</td>
+                <td>12.29</td>
+                <td>21</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+    window.onload = function() {
+        var btn = document.getElementById('age');
+        var tbody = document.getElementsByTagName('tbody')[0];
+        var tr = tbody.getElementsByTagName('tr');
+        console.log(tr);
+        var age = [],
+            result = [];
+        for (var i = 0; i < tr.length; i++) {
+            var msg = parseInt(tr[i].getElementsByTagName('td')[2].innerHTML);
+            var brr = [msg, i]
+            age.push(brr);
+        };
+        flag = true;
+
+        btn.onclick = function() {
+            if (flag) {
+                age = age.sort();
+                console.log(tbody);
+
+                for (var i = 0; i < age.length; i++) {
+                    var key = age[i][1];
+                    result.push(tr[key]);
+                };
+
+                tbody.innerHTML = "";
+                for (var i = 0; i < result.length; i++) {
+                    tbody.appendChild(result[i]);
+                };
+                flag = false;
+            };
+        }
+
+    }
+    </script>
+</body>
+
+</html>
