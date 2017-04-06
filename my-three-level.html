@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>three level</title>
+    <style type="text/css" media="screen">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    ul li {
+        list-style: none;
+        height: 32px;
+    }
+    
+    .level1 {
+        width: 200px;
+        background-color: pink;
+    }
+    
+    .level3 {
+        display: none;
+        position: absolute;
+        left: 200px;
+        top: 0;
+        width: 200px;
+        background-color: blue;
+    }
+    
+    .level2 {
+        width: 200px;
+        background-color: yellow;
+        display: none;
+        position: absolute;
+        left: 200px;
+        top: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul class="menu">
+            <li class="level1">一级菜单
+                <ul class="level2">
+                    <li class="level2-2">二级菜单1
+                        <ul class="level3">
+                            <li>1-2-3</li>
+                            <li>1-2-3</li>
+                            <li>1-2-3</li>
+                        </ul>
+                    </li>
+                    <li class="level2-2">二级菜单1
+                        <ul class="level3">
+                            <li>2-2-3</li>
+                            <li>2-2-3</li>
+                            <li>2-2-3</li>
+                        </ul>
+                    </li>
+                    <li class="level2-2">二级菜单1
+                        <ul class="level3">
+                            <li>3-2-3</li>
+                            <li>3-2-3</li>
+                            <li>3-2-3</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="level1">一级菜单
+                <ul class="level2">
+                    <li>二级菜单2</li>
+                    <li>二级菜单2</li>
+                    <li>二级菜单2</li>
+                </ul>
+            </li>
+            <li class="level1">一级菜单
+                <ul class="level2">
+                    <li>二级菜单3</li>
+                    <li>二级菜单3</li>
+                    <li>二级菜单3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    window.onload = function() {
+        var level1 = document.getElementsByClassName("level1");
+        var level2 = document.getElementsByClassName("level2");
+        var level20Li = document.getElementsByClassName("level2-2");
+        var level30 = document.getElementsByClassName("level3");
+
+        for (var i = 0; i < level1.length; i++) {
+            level1[i].onmouseover = (function(i) {
+                return function() {
+
+                    level2[i].style.display = "block";
+                    level2[i].style.top = (i * 32 + "px");
+                }
+            })(i);
+            level1[i].onmouseout = (function(i) {
+                return function() {
+
+                    level2[i].style.display = "none";
+                }
+            })(i);
+
+        }
+
+
+        for (var i = 0; i < level20Li.length; i++) {
+            level20Li[i].onmouseover = (function(i) {
+                return function() {
+                   console.log(i);
+                    level30[i].style.display = "block";
+                    level30[i].style.top = (i * 32 + "px");
+                }
+            })(i);
+            level20Li[i].onmouseout = (function(i) {
+                return function() {
+
+                    level30[i].style.display = "none";
+                }
+            })(i);
+
+        }
+
+    }
+    </script>
+</body>
+
+</html>
