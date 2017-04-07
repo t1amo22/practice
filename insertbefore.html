@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>手写实现jquery里面的insertAfter（结合nextSibling和insertBefore来实现）</title>
+    <style type="text/css" media="screen">
+    div {
+        width: 100px;
+        height: 32px;
+        background-color: orange;
+        margin: 20px 0;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var one = document.getElementById("one");
+        var two = document.createElement("div");
+        two.innerHTML = "2";
+
+
+        function insertAfter(two, one) {
+            var parent = one.parentNode;
+
+            // 看子元素里有几个属性节点
+            var child = parent.childNodes;
+
+            var count = 0;
+            for (var i = 0; i < child.length; i++) {
+                if (child[i].nodeType === 1) {
+                    count++;
+                };
+            };
+            /*如果只有一个*/
+            if (count == 1) {
+                parent.appendChild(two);
+            } else {
+                //判断下一个节点是元素节点，nodeType=1
+                var three = one.nextSibling;
+
+                while (three.nodeType != 1) {
+                    three = three.nextSibling;
+
+                };
+
+                parent.insertBefore(two, three);
+
+            }
+
+        }
+
+        insertAfter(two, one);
+    }
+    </script>
+</head>
+
+<body>
+    <div id="one">1</div>
+    <div class="two">3</div>
+</body>
+
+</html>
