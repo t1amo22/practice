@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手写原生的AJAX</title>
+</head>
+<body>
+	<button id="btn" type="button">AJAX实现局部更新内容</button>
+	<div id="result"></div>
+	<script type="text/javascript">
+	window.onload=function(){
+		var btn=document.getElementById("btn");
+		var result=document.getElementById("result");
+		btn.addEventListener('click',ajax,false);
+		function ajax(){
+			alert("hi");
+			var xhr=new XMLHttpRequest();
+			xhr.open("GET","test.php");
+			xhr.onreadystatechange=function(){
+				if (xhr.readyState===4&&xhr.status===400) {
+					var msg=xhr.responseText;
+                    result.innerHTML=msg;
+				};
+			}
+			xhr.send();
+		}
+	}
+	</script>
+</body>
+</html>
