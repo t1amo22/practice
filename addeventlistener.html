@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手写事件绑定</title>
+</head>
+<body>
+	<button type="button">click</button>
+	<script type="text/javascript">
+
+	window.onload=function(){
+		var btn=document.getElementsByTagName("button")[0];
+		btn.onclick=sayhi;//DOM0
+        btn.onmouseover=function(){
+			alert("mouseover!");
+		}//DOM0
+		btn.addEventListener('mouseover',sayhi,false);//dom2
+		btn.attachEvent('onclick',sayhi);//IE
+
+		function sayhi(){
+			alert("hi");
+		}
+	}
+	</script>
+
+</body>
+</html>
