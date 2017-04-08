@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>toggleclass</title>
+	<style type="text/css" media="screen">
+	 div{
+	 	width: 100px;
+	 	height: 100px;
+	 	border:1px solid red;
+	 }
+     .addclass{
+         background-color: pink;
+     }
+	</style>
+</head>
+<body>
+	<button type="button">toggleclass</button>
+	<div>点击按钮这个盒子变化class,点击一次变化一次</div>
+	<script type="text/javascript">
+	window.onload=function(){
+		var btn=document.getElementsByTagName("button")[0];
+		var div=document.getElementsByTagName("div")[0];
+		btn.onclick=function(){
+			
+
+           console.log(div.getAttribute('class'));
+           if (div.getAttribute('class')) {
+           	 div.setAttribute('class','');
+           }
+           else{
+          	div.setAttribute('class','addclass');
+           }
+		}
+	}
+	</script>
+</body>
+</html>
