@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>three levels menu</title>
+    <style type="text/css" media="screen">
+    *{
+    	list-style: none;
+    	margin: 0;
+    	padding: 0;
+    }
+
+    span{
+    	border: 1px solid blue;
+    	display:block;
+    	width: inherit;
+    }
+    ul{
+      display:inline-block;
+    }
+    #menu{
+    	width: 100px;
+    }
+    .one ul {
+        display: none;
+    }
+    .one{
+    	width: 100px;
+    }
+    .two ul {
+        display: none;
+    }
+
+    ul{
+    	border:1px solid red;
+    	
+    }
+    span{
+    	
+    }
+    </style>
+</head>
+
+<body>
+    <ul id="menu">
+        <li class="one">
+            <span>1</span>
+            <ul>
+                <li class="two">
+                    <span>1-1</span>
+                    <ul>
+                        <li class="three">1-1-1</li>
+                        <li class="three">1-1-2</li>
+                    </ul>
+                </li>
+                <li class="two">
+                     <span>1-2</span>
+                    <ul>
+                        <li class="three">1-2-1</li>
+                        <li class="three">1-2-2</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="one">
+            <span>2</span>
+            <ul>
+                <li class="two">
+                <span>2-1</span>
+                    <ul>
+                        <li class="three"> 2-1-1</li>
+                        <li class="three">2-1-2</li>
+                    </ul>
+                </li>
+                <li class="two">
+                   <span>2-2</span>
+                    <ul>
+                        <li class="three">2-2-1</li>
+                        <li class="three">2-2-2</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="one">
+            <span>3</span>
+            <ul>
+                <li class="two">
+                    <span>3-1</span>
+                    <ul>
+                        <li class="three">3-1-1</li>
+                        <li class="three">3-1-2</li>
+                    </ul>
+                </li>
+                <li class="two">
+                <span>3-2</span>
+                    <ul>
+                        <li class="three">3-2-1</li>
+                        <li class="three">3-2-2</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script type="text/javascript">
+    window.onload = function() {
+        var aone = document.getElementsByClassName("one");
+
+        var atwo = document.getElementsByClassName("two");
+        var athree = document.getElementsByClassName("three");
+
+        console.log(aone)
+
+        for (var i = 0; i < aone.length; i++) {
+            aone[i].onmouseover = function() {
+                var child = this.childNodes;
+                for (var i = 0; i < child.length; i++) {
+                    if (child[i].nodeName == "UL") {
+                        child[i].style.display = "block";
+                    }
+                };
+            }
+            aone[i].onmouseout = function(e) {
+                var child = this.childNodes;
+                for (var i = 0; i < child.length; i++) {
+                    if (child[i].nodeName == "UL") {
+                        child[i].style.display = "none";
+                    }
+                };
+            }
+        };
+
+
+        for (var i = 0; i < atwo.length; i++) {
+            atwo[i].onmouseover = function() {
+                var child = this.childNodes;
+                for (var i = 0; i < child.length; i++) {
+                    if (child[i].nodeName == "UL") {
+                        child[i].style.display = "block";
+                    }
+                };
+            }
+            atwo[i].onmouseout = function(e) {
+                var child = this.childNodes;
+                for (var i = 0; i < child.length; i++) {
+                    if (child[i].nodeName == "UL") {
+                        child[i].style.display = "none";
+                    }
+                };
+            }
+        };
+    }
+    </script>
+</body>
+
+</html>
