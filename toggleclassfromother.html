@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>toggle</title>
+    <style>
+    #test {
+        width: 400px;
+        height: 300px;
+        margin: 50px auto;
+    }
+    .red {
+        border: 5px solid red;
+    }
+    
+    .opacity {
+        opacity: 0.2;
+    }
+    
+    .yellow {
+        background-color: yellow;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="test" class="yellow"></div>
+    <br/>
+    <div style="text-align:center;margin:0 auto">
+        <button type="button" onclick="toggleClass('red')">红色边框</button>
+        <button type="button" onclick="toggleClass('opacity')">内填充</button>
+    </div>
+    <script type="text/javascript">
+    var ele = document.getElementById('test'); //得到元素
+    function toggleClass(newClass) {
+        var currentClass = ele.className;//获取当前样式
+        var arr = [];
+        var exist = false;//用变量来标识类是否存在
+        if (!currentClass) {//如果当前样式不存在，直接添加
+            ele.className = newClass;
+        } else {//如果存在
+            arr = currentClass.split(' ');//将样式存放在数组里方便判断里面是否存在新的样式
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] == newClass) {//如果发现存在
+                	exist = true;//标记为当前样式中存在新的样式
+                    ele.className = currentClass.replace(newClass, '').trim();//通过字符串的replace方法去除样式，在赋值给元素的className                
+                    break;//退出循环
+                }
+            }
+            if (!exist) {//如果当前样式中都不存在新的样式
+            	ele.className=currentClass+' '+newClass;//将样式添加到当前样式当中
+            };
+        }
+    }
+    </script>
+</body>
+
+</html>
