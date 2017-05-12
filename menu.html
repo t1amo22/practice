@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+    <style type="text/css" media="screen">
+    .level2 {
+        display: none;
+    }
+    .level3{
+    	display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <ul id="menu">
+        <li class="level1">一级菜单
+            <ul class="level2">
+                <li class="level2-2">二级菜单1
+                    <ul class="level3">
+                        <li>1-2-3</li>
+                        <li>1-2-3</li>
+                        <li>1-2-3</li>
+                    </ul>
+                </li>
+                <li class="level2-2">二级菜单1
+                    <ul class="level3">
+                        <li>2-2-3</li>
+                        <li>2-2-3</li>
+                        <li>2-2-3</li>
+                    </ul>
+                </li>
+                <li class="level2-2">二级菜单1
+                    <ul class="level3">
+                        <li>3-2-3</li>
+                        <li>3-2-3</li>
+                        <li>3-2-3</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="level1">一级菜单
+            <ul class="level2">
+                <li class="level2-2">二级菜单1
+                    <ul class="level3">
+                        <li>1-2-3</li>
+                        <li>1-2-3</li>
+                        <li>1-2-3</li>
+                    </ul>
+                </li>
+                <li class="level2-2">二级菜单1
+                    <ul class="level3">
+                        <li>2-2-3</li>
+                        <li>2-2-3</li>
+                        <li>2-2-3</li>
+                    </ul>
+                </li>
+                <li class="level2-2">二级菜单1
+                    <ul class="level3">
+                        <li>3-2-3</li>
+                        <li>3-2-3</li>
+                        <li>3-2-3</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="level1">一级菜单
+            <ul class="level2">
+                <li class="level2-2">二级菜单1
+                    <ul class="level3">
+                        <li>1-2-3</li>
+                        <li>1-2-3</li>
+                        <li>1-2-3</li>
+                    </ul>
+                </li>
+                <li class="level2-2">二级菜单1
+                    <ul class="level3">
+                        <li>2-2-3</li>
+                        <li>2-2-3</li>
+                        <li>2-2-3</li>
+                    </ul>
+                </li>
+                <li class="level2-2">二级菜单1
+                    <ul class="level3">
+                        <li>3-2-3</li>
+                        <li>3-2-3</li>
+                        <li>3-2-3</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script type="text/javascript">
+    (function() {
+        var menu = document.getElementById("menu");
+
+        
+
+        var level1 = menu.getElementsByClassName("level1");
+        var level2 = menu.getElementsByClassName("level2-2");
+
+        addEvent(level1);
+        addEvent(level2);
+
+        function addEvent(objects) {
+        	var len=objects.length;
+            for (var i = 0; i < len; i++) {
+                objects[i].onmouseover = function() {
+                    var children = this.childNodes;
+                    for (var j = 0; j < children.length; j++) {
+                        if (children[j].nodeName == "UL") {
+                            children[j].style.display = "block";
+                        }
+                    }
+                }
+                objects[i].onmouseout = function() {
+                    var children = this.childNodes;
+                    for (var j = 0; j < children.length; j++) {
+                        if (children[j].nodeName == "UL") {
+                            children[j].style.display = "none";
+                        }
+                    }
+                }
+            }
+        }
+
+      
+    })();
+    </script>
+</body>
+
+</html>
