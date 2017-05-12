@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>4</td>
+                <td id='r'>5</td>
+                <td>
+                    <a href="#">
+                        <button type="button" onclick="update(this)">修改</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="#">
+                        <button type="button" onclick="save(this)">保存</button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+          function update(btn){
+          	    var parent=btn.parentNode;
+                while(parent.nodeName!="TR"){
+                	parent=parent.parentNode;
+                }
+                var td=parent.cells[1];
+                var value=td.innerHTML;
+                td.innerHTML="<input type='text' value="+value+">";
+
+          }
+
+          function save(btn){
+          	    var parent=btn.parentNode;
+                while(parent.nodeName!="TR"){
+                	parent=parent.parentNode;
+                }
+                var td=parent.cells[1];
+                td.innerHTML=td.childNodes[0].value;
+          }
+    </script>
+</body>
+
+</html>
