@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style type="text/css" media="screen">
+    body {
+        display: flex;
+        flex-direction: row;
+        height: 400px;
+    }
+    
+    .left {
+        background-color: lightblue;
+        width: 20%;
+    }
+    
+    .right-top {
+        background-color: pink;
+        height: 200px;
+        width: 100%;
+    }
+    
+    .right-bottom {
+        background-color: cyan;
+        height: 200px;
+        width: 100%;
+
+    }
+    .main{
+    	display: flex;
+    	felex-direction:column;
+    	width:80%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box left">Left</div>
+    <div class="main">
+        <div class="box right-top">Right Top</div>
+        <div class="box right-bottom">Right Bottom</div>
+    </div>
+</body>
+
+</html>
